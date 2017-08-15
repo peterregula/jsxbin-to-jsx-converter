@@ -49,7 +49,7 @@ namespace jsxbin_to_jsx.JsxbinDecoding
                     string objExpr = t.Item1;
                     if (!IsValidIdentifier(t.Item1))
                     {
-                        objExpr = "\"" + objExpr + "\"";
+                        objExpr = "\"" + System.Web.HttpUtility.JavaScriptStringEncode(objExpr) + "\"";
                     }
                     return objExpr + ": " + t.Item2.PrettyPrint();
                 });

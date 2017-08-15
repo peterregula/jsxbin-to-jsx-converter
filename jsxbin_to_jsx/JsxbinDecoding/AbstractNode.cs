@@ -226,10 +226,7 @@ namespace jsxbin_to_jsx.JsxbinDecoding
                     break;
                 case 4:
                     val = DecodeString();
-                    val = val.Replace("\\", "\\\\");
-                    val = val.Replace("\"", "\\\"");
-                    val = "\"" + val + "\"";                    
-                    val = val.Replace("\n", "\\n").Replace("\t", "\\t").Replace("\r", "\\r");                    
+                    val = $"\"" + System.Web.HttpUtility.JavaScriptStringEncode(val) + "\"";
                     break;
                 case 0:
                 case 1:

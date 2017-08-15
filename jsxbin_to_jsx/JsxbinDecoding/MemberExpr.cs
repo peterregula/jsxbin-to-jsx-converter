@@ -46,7 +46,7 @@ namespace jsxbin_to_jsx.JsxbinDecoding
                 }
                 else
                 {
-                    member = "[\"" + memberInfo.Item1 + "\"]";
+                    member = "[\"" + System.Web.HttpUtility.JavaScriptStringEncode(memberInfo.Item1) + "\"]";
                 }
             }
             return obj + member;
